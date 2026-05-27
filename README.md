@@ -1,67 +1,80 @@
-# 🚀 HRMS - Full Stack Human Resource Management System
+# 🚀 HRMS - Human Resource Management System
 
-A full-stack web application built using **React and Spring Boot** to manage employee operations like attendance, payroll, and leave management.
+A full-stack web application built using **HTML, CSS, JavaScript, and Java (Spring Boot)** to manage employee operations like attendance, payroll, and leave management.
 
 ---
 
 ## 🔥 Features
-- 👨‍💼 Employee Management
-- 📅 Attendance Tracking
-- 📝 Leave Management
-- 💰 Payroll System
-- 🔐 Secure JWT Authentication
-- 🔑 Role-Based Access Control
+- 👨‍💼 Employee Management  
+- 📅 Attendance Tracking  
+- 📝 Leave Management  
+- 💰 Payroll System  
+- 🔐 Secure Authentication (Spring Security)  
+- 🔑 Role-Based Access Control  
 
 ---
 
 ## 🛠 Tech Stack
 
 ### 💻 Frontend
-- React.js
-- HTML, CSS, JavaScript
+- HTML  
+- CSS  
+- JavaScript  
 
 ### ⚙ Backend
-- Java
-- Spring Boot
-- Spring MVC
-- Hibernate / JPA
-- Spring Security
+- Java  
+- Spring Boot  
+- Spring MVC  
+- Hibernate / JPA  
+- Spring Security  
 
 ### 🗄 Database
-- MySQL
+- MySQL  
 
 ---
 
 ## 📁 Project Structure
 hrms-fullstack/
 │
-├── frontend/ # Web Application
+├── frontend/ # HTML, CSS, JavaScript
 ├── backend/ # Spring Boot Application
+
 
 ---
 
 ## ▶️ How to Run Locally
 
 ### 🔹 Backend
-1. Open backend folder in IDE
-2. Configure MySQL in application.properties
-3. Run Spring Boot application
+1. Open the `backend` folder in your IDE  
+2. Configure MySQL in `application.properties`  
+3. Run the Spring Boot application  
 
 ### 🔹 Frontend
-```bash
-npm install
-npm start
+1. Open the `frontend` folder  
+2. Run `index.html` in browser  
 
+---
 
-📸 Screenshots (Add Soon)
-Postman API responses
-UI Screens
-Database Schema
-📌 Future Improvements
-Docker Deployment
-Microservices Architecture
-Cloud Deployment (AWS)
-👩‍💻 Author
+## 📸 Screenshots (To Be Added)
+- Login Page  
+- Dashboard  
+- Employee Management UI  
+- Postman API Responses  
 
-Shamal Bhagat
-Java Backend Developer | Spring Boot | REST APIs
+---
+
+## 📌 Future Improvements
+- Convert frontend to React  
+- Docker Deployment  
+- Cloud Deployment (AWS)  
+
+---
+
+## 👩‍💻 Author
+
+**Shamal Bhagat**  
+Java Backend Developer | Spring Boot | REST APIs  
+
+---
+
+⭐ If you like this project, give it a star!
