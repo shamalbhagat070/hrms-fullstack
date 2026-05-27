@@ -33,3 +33,18 @@ A full-stack web application built using **React and Spring Boot** to manage emp
 ---
 
 ## 📁 Project Structure
+
+
+---
+
+## ▶️ How to Run Locally
+
+### 🔹 Backend
+1. Open backend folder in IDE
+2. Configure MySQL in application.properties
+3. Run Spring Boot application
+
+### 🔹 Frontend
+```bash
+npm install
+npm start
