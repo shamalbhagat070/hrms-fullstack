@@ -33,7 +33,10 @@ A full-stack web application built using **React and Spring Boot** to manage emp
 ---
 
 ## 📁 Project Structure
-
+hrms-fullstack/
+│
+├── frontend/ # Web Application
+├── backend/ # Spring Boot Application
 
 ---
 
