@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Monthly Report - HRMS</title>
+    <link rel="stylesheet" href="../../css/admin.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>HRMS Admin</h2>
+            <ul>
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li><a href="employees.html">👨‍💼 Employees</a></li>
+                <li><a href="attendance.html">📊 Attendance</a></li>
+                <li><a href="leaves.html">🌴 Leaves</a></li>
+                <li><a href="payroll.html">💰 Payroll</a></li>
+                <li class="active"><a href="#">📅 Monthly Report</a></li>
+                <li><a href="tasks.html">📋 Tasks <a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <header class="header">
+                <h1>📅 Monthly Attendance Report</h1>
+            </header>
+
+            <!-- FILTER -->
+            <section class="controls">
+                <input type="number" id="month" placeholder="Month (1-12)">
+                <input type="number" id="year" placeholder="Year">
+                <button onclick="loadReport()">Load Report</button>
+
+                <input type="date" id="calendarDate" onchange="filterByDate()">
+
+                <button onclick="exportToExcel()">📥 Excel</button>
+                <button onclick="exportToPDF()">📄 PDF</button>
+            </section>
+
+            <!-- SUMMARY -->
+            <section class="cards">
+                <div class="card">Present: <span id="presentCount">0</span></div>
+                <div class="card">Absent: <span id="absentCount">0</span></div>
+                <div class="card">Leave: <span id="leaveCount">0</span></div>
+            </section>
+
+            <!-- CHART -->
+            <div class="card">
+                <h3>Monthly Overview</h3>
+                <canvas id="monthlyChart"></canvas>
+            </div>
+
+            <!-- TABLE -->
+            <div class="card">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Present</th>
+                                    <th>Absent</th>
+                                    <th>Leave</th>
+                                </tr>
+                            </thead>
+                        </tr>
+                    </thead>
+                    <tbody id="reportTable"></tbody>
+                </table>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="../../js/admin/monthly.js"></script>
+
+</body>
+
+</html>

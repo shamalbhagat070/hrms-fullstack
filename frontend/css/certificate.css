@@ -1,0 +1,254 @@
+/* ===============================
+   CERTIFICATE PAGE WRAPPER
+================================ */
+
+.certificate-page {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* ===============================
+   CARD CONTAINER
+================================ */
+
+.certificate-card {
+    width: 100%;
+    max-width: 1100px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ===============================
+   CERTIFICATE (A4 SIZE)
+================================ */
+
+.certificate {
+    width: 794px;
+    /* A4 width */
+    min-height: 1123px;
+    /* A4 height */
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+
+/* ===============================
+   OUTER BORDER
+================================ */
+
+.certificate__outer {
+    border: 6px solid #1e3a8a;
+    padding: 12px;
+}
+
+
+/* ===============================
+   INNER BORDER
+================================ */
+
+.certificate__inner {
+    border: 2px solid #cbd5e1;
+    padding: 50px 30px;
+    text-align: center;
+    background: #ffffff;
+}
+
+
+/* ===============================
+   TITLE
+================================ */
+
+.certificate__title {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #1e3a8a;
+    margin-bottom: 25px;
+}
+
+
+/* ===============================
+   NAME
+================================ */
+
+.certificate__name {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #0f172a;
+}
+
+
+/* ===============================
+   ROLE
+================================ */
+
+.certificate__role {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 10px 0;
+    color: #334155;
+}
+
+
+/* ===============================
+   TEXT CONTENT
+================================ */
+
+.certificate__text {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #475569;
+    line-height: 1.6;
+}
+
+
+/* ===============================
+   DATE
+================================ */
+
+.certificate__date {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #1e293b;
+}
+
+
+/* ===============================
+   DESCRIPTION
+================================ */
+
+.certificate__desc {
+    margin-top: 20px;
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+}
+
+
+/* ===============================
+   SIGNATURE SECTION
+================================ */
+
+.certificate__signatures {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    padding: 0 40px;
+}
+
+.certificate__sign {
+    text-align: center;
+}
+
+.certificate__line {
+    width: 180px;
+    border-top: 2px solid #000;
+    margin: 10px auto 5px;
+}
+
+
+/* ===============================
+   ACTION BUTTON (DOWNLOAD / PRINT)
+================================ */
+
+.certificate__actions {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.certificate__btn {
+    padding: 12px 25px;
+    background: #1e3a8a;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.certificate__btn:hover {
+    background: #162f6b;
+}
+
+
+/* ===============================
+   STATUS BADGE
+================================ */
+
+.certificate__status {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.certificate__status--completed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.certificate__status--pending {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+
+/* ===============================
+   PRINT STYLING
+================================ */
+
+@media print {
+    body {
+        background: white;
+    }
+    .certificate-card {
+        box-shadow: none;
+        padding: 0;
+    }
+    .certificate {
+        box-shadow: none;
+        margin: 0;
+        width: 100%;
+        min-height: auto;
+    }
+    .certificate__actions {
+        display: none;
+    }
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+    .certificate {
+        width: 100%;
+        min-height: auto;
+    }
+    .certificate__inner {
+        padding: 30px 20px;
+    }
+    .certificate__signatures {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .certificate__name {
+        font-size: 22px;
+    }
+    .certificate__role {
+        font-size: 18px;
+    }
+}

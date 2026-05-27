@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Certificate</title>
+    <link rel="stylesheet" href="../../css/intern.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h2 class="sidebar__title">Intern Portal</h2>
+
+            <ul class="sidebar__menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="tasks.html">My Tasks</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="leave.html">Leave</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li class="active"><a href="certificate.html">Certificate</a></li>
+            </ul>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main">
+
+            <!-- TOPBAR -->
+            <div class="topbar">
+                <div>
+                    <h2 class="topbar__title">Certificate</h2>
+                    <p class="topbar__subtitle">Download your internship certificate</p>
+                </div>
+
+                <div class="topbar__actions">
+                    <span id="topUserName">Welcome</span>
+                    <button class="btn btn--danger" onclick="logout()">Logout</button>
+                </div>
+            </div>
+
+            <!-- CERTIFICATE PAGE -->
+            <div class="certificate-page">
+
+                <div class="certificate-card">
+
+                    <!-- STATUS -->
+                    <div id="statusBadge" class="certificate__status">
+                        Checking...
+                    </div>
+
+                    <!-- CERTIFICATE -->
+                    <div class="certificate" id="certificate">
+
+                        <div class="certificate__outer">
+                            <div class="certificate__inner">
+
+                                <h1 class="certificate__title">CERTIFICATE OF COMPLETION</h1>
+
+                                <p class="certificate__text">This is to certify that</p>
+
+                                <h2 class="certificate__name" id="certName">
+                                    Loading...
+                                </h2>
+
+                                <p class="certificate__text">
+                                    has successfully completed the internship program as
+                                </p>
+
+                                <h3 class="certificate__role" id="certRole">
+                                    Loading...
+                                </h3>
+
+                                <p class="certificate__date">
+                                    <strong>Duration:</strong>
+                                    <span id="startDate">--</span> –
+                                    <span id="endDate">--</span>
+                                </p>
+
+                                <p class="certificate__desc">
+                                    During this period, the intern demonstrated strong technical skills, commitment, and professionalism while contributing to assigned projects. We appreciate their dedication and wish them continued success in their future endeavors.
+                                </p>
+
+                                <p class="certificate__meta">
+                                    Certificate ID: <span id="certId">--</span><br> Date of Issue: <span id="issueDate">--</span>
+                                </p>
+
+                                <!-- SIGNATURES -->
+                                <div class="certificate__signatures">
+                                    <div class="certificate__sign">
+                                        <div class="certificate__line"></div>
+                                        <p>HR Manager</p>
+                                    </div>
+
+                                    <div class="certificate__sign">
+                                        <div class="certificate__line"></div>
+                                        <p>Director</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- ACTION -->
+                    <div class="certificate__actions">
+                        <button class="certificate__btn" onclick="downloadCertificate()">
+                        Download Certificate
+                    </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../../js/intern/certificate.js"></script>
+
+</body>
+
+</html>

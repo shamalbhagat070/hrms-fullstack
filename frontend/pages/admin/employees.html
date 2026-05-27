@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Employees - HRMS</title>
+    <link rel="stylesheet" href="../../css/admin.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>HRMS Admin</h2>
+            <ul>
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li class="active"><a href="employees.html">👨‍💼 Employees</a></li>
+                <li><a href="attendance.html">📊 Attendance</a></li>
+                <li><a href="leaves.html">🌴 Leaves</a></li>
+                <li><a href="payroll.html">💰 Payroll</a></li>
+                <li><a href="tasks.html">📋 Tasks <a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- HEADER -->
+            <header class="header">
+                <div>
+                    <h1>Employees</h1>
+                    <p class="sub-text">Manage your company employees</p>
+                </div>
+
+                <button class="btn-primary" onclick="openModal()">
+                + Add Employee
+            </button>
+            </header>
+
+            <!-- CONTROLS -->
+            <section class="controls">
+
+                <input type="text" id="searchInput" placeholder="🔍 Search employee..." onkeyup="searchEmployee()">
+
+                <select id="filterDept" onchange="filterEmployee()">
+                <option value="">All Departments</option>
+                <option value="IT">IT</option>
+                <option value="HR">HR</option>
+                <option value="Finance">Finance</option>
+            </select>
+
+            </section>
+
+            <!-- TABLE -->
+            <section class="content">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Employee</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="employeeTable"></tbody>
+
+                </table>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- ✅ MODAL (ADD / EDIT EMPLOYEE) -->
+    <div class="modal" id="employeeModal">
+
+        <div class="modal-content">
+
+            <h2 id="modalTitle">Add Employee</h2>
+
+            <!-- PERSONAL -->
+            <input type="text" id="firstName" placeholder="First Name">
+            <input type="text" id="lastName" placeholder="Last Name">
+
+            <!-- LOGIN -->
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+
+            <!-- CONTACT -->
+            <input type="email" id="email" placeholder="Email Address">
+            <input type="text" id="mobileNumber" placeholder="Mobile Number">
+
+            <!-- JOB -->
+            <input type="text" id="department" placeholder="Department">
+            <input type="text" id="designation" placeholder="Designation">
+            <input type="text" id="salary" placeholder="Salary">
+
+            <!-- ADDRESS -->
+            <input type="text" id="address" placeholder="Address">
+
+            <!-- ROLE -->
+            <select id="role">
+            <option value="ADMIN">Admin</option>
+            <option value="EMPLOYEE">Employee</option>
+        </select>
+
+            <!-- STATUS -->
+            <select id="status">
+            <option value="ACTIVE">Active</option>
+            <option value="INACTIVE">Inactive</option>
+        </select>
+
+            <!-- ACTIONS -->
+            <div class="modal-actions">
+                <button class="btn-primary" onclick="saveEmployee()">Save</button>
+                <button class="btn-secondary" onclick="closeModal()">Cancel</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../../js/admin/employees.js"></script>
+
+</body>
+
+</html>

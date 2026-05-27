@@ -1,0 +1,408 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+  background: #f4f6fb;
+}
+
+/* ================= NAVBAR ================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  background: #1e40af;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #facc15;
+}
+
+.login-btn {
+  background: #facc15;
+  color: black;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+/* MOBILE MENU */
+.menu-toggle {
+  display: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px;
+  background: white;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 40px;
+  color: #1e40af;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background: #2563eb;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #1e40af;
+}
+
+/* HERO IMAGE */
+.hero-image img {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* ================= ABOUT ================= */
+.about {
+  padding: 80px;
+  text-align: center;
+  background: #e0e7ff;
+}
+
+.about h2 {
+  margin-bottom: 20px;
+  color: #1e40af;
+}
+
+/* ================= FEATURES ================= */
+.features {
+  padding: 80px;
+  text-align: center;
+}
+
+.feature-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1e40af;
+  color: white;
+  margin-top: 40px;
+}
+
+/* ================= AUTH PAGES (LOGIN / REGISTER / RESET) ================= */
+
+body.login-body {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb, #38bdf8);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* GLOW BACKGROUND */
+body.login-body::before,
+body.login-body::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  filter: blur(120px);
+  z-index: 0;
+}
+
+body.login-body::before {
+  background: #38bdf8;
+  top: -100px;
+  left: -100px;
+}
+
+body.login-body::after {
+  background: #1e40af;
+  bottom: -100px;
+  right: -100px;
+}
+
+/* GLASS CARD */
+.login-box {
+  position: relative;
+  z-index: 1;
+  width: 520px;
+  padding: 30px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  animation: fadeIn 0.8s ease;
+}
+
+/* TITLE */
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* FORM GRID */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+/* INPUTS */
+.login-box input,
+.login-box select {
+  width: 100%;
+  height: 38px;
+  padding: 8px 10px;
+  margin: 8px 0;
+
+  border-radius: 6px;
+  border: none;
+
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-size: 14px;
+}
+
+/* PLACEHOLDER */
+.login-box input::placeholder {
+  color: #e0e7ff;
+}
+
+/* FOCUS */
+.login-box input:focus,
+.login-box select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(56,189,248,0.4);
+}
+
+/* BUTTON */
+.login-box button {
+  width: 100%;
+  padding: 11px;
+  margin-top: 10px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #38bdf8;
+  color: white;
+  font-size: 14px;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-box button:hover {
+  background: #0ea5e9;
+  transform: translateY(-2px);
+}
+
+/* LINKS */
+.extra-links {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.extra-links a {
+  color: #e0e7ff;
+  text-decoration: none;
+}
+
+.extra-links a:hover {
+  text-decoration: underline;
+}
+
+/* ERROR */
+.error-box {
+  display: none;
+  background: rgba(255,0,0,0.2);
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+/* ================= DASHBOARD ================= */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #1e3a8a;
+  color: white;
+  position: fixed;
+  padding: 20px;
+}
+
+.main-content {
+  margin-left: 220px;
+  padding: 30px;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 20px;
+}
+
+.card-box {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-width: 300px;
+    margin-top: 20px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #1e40af;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .login-box {
+    width: 90%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ================= REGISTER SCROLL FIX ================= */
+body.register-body {
+  height: auto;          /* allow full height */
+  min-height: 100vh;
+  overflow-y: auto;      /* enable vertical scroll */
+  padding: 40px 0;       /* space top & bottom */
+}
+
+/* Center form but allow scroll */
+body.register-body {
+  display: flex;
+  align-items: flex-start;   /* start from top */
+  justify-content: center;
+}
+
+/* Add spacing so it looks premium */
+body.register-body .login-box {
+  margin: 40px 0;
+}
+
+/* FIX SELECT TEXT + DROPDOWN */
+.login-box select {
+  color: white;                 /* selected text */
+  background: rgba(255,255,255,0.2);
+}
+
+/* FIX DROPDOWN OPTIONS */
+.login-box select option {
+  color: black;                 /* visible text */
+  background: white;            /* white dropdown */
+}
+

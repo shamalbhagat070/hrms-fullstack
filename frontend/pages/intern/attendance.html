@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/employee1.css">
+
+    <!-- Flatpickr (Date Picker) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h2>Intern Portal</h2>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="tasks.html">My Tasks</a></li>
+                <li class="active"><a href="attendance.html">Attendance</a></li>
+                <li><a href="leave.html">Leave</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="certificate.html">Certificate</a></li>
+            </ul>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main">
+
+            <!-- TOP BAR -->
+            <div class="topbar">
+                <h2>Attendance</h2>
+
+                <div class="view-buttons">
+                    <button id="tableBtn" class="active">Table</button>
+                    <button id="calendarBtn">Calendar</button>
+                </div>
+            </div>
+
+            <!-- FILTER + ACTIONS -->
+            <div class="top-controls">
+
+                <div class="filters">
+
+                    <!-- ✅ MONTH DROPDOWN (NEW) -->
+                    <select id="monthSelect"></select>
+
+                    <!-- EXISTING -->
+                    <input type="text" id="dateRange" placeholder="Select Date Range">
+                    <input type="text" placeholder="Search..." onkeyup="searchData(this.value)">
+
+                </div>
+
+                <div class="actions">
+                    <button onclick="checkIn()" class="btn in">✔ Check In</button>
+                    <button onclick="checkOut()" class="btn out">✖ Check Out</button>
+                </div>
+
+            </div>
+
+            <!-- SUMMARY -->
+            <div class="summary">
+                <div class="card-box">Present: <span id="presentCount">0</span></div>
+                <div class="card-box">Absent: <span id="absentCount">0</span></div>
+                <div class="card-box">Half Day: <span id="halfCount">0</span></div>
+            </div>
+
+            <!-- TABLE VIEW -->
+            <div id="tableView" class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Check In</th>
+                            <th>Check Out</th>
+                            <th>Hours</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendanceTable">
+                        <!-- JS will load data -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- CALENDAR VIEW -->
+            <div id="calendarView" class="card hidden">
+                <div id="calendar"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="../../js/employee/attendance.js"></script>
+
+</body>
+
+</html>

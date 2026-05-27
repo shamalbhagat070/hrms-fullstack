@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Task Management</title>
+    <link rel="stylesheet" href="../../css/admin.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h2>Admin Panel</h2>
+            <ul>
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li><a href="employees.html">👨‍💼 Employees</a></li>
+                <li><a href="attendance.html">📊 Attendance</a></li>
+                <li><a href="leaves.html">🌴 Leaves</a></li>
+                <li><a href="payroll.html">💰 Payroll</a></li>
+                <li class="active"><a href="tasks.html">📋 Tasks</a></li>
+            </ul>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main">
+
+            <!-- HEADER -->
+            <div class="header">
+                <h2>Task Management</h2>
+            </div>
+
+            <!-- CREATE TASK -->
+            <div class="card task-card">
+
+                <h3>Create Task</h3>
+
+                <div class="task-form">
+                    <input type="text" id="title" placeholder="Task Title">
+                    <input type="date" id="deadline">
+
+                    <select id="internSelect">
+                        <option value="">Select Intern</option>
+                    </select>
+
+                    <button class="btn-primary" onclick="createTask()">Create Task</button>
+                </div>
+
+            </div>
+
+            <!-- TASK LIST -->
+            <div class="card task-card">
+
+                <h3>All Tasks</h3>
+
+                <div class="table-container">
+                    <table class="task-table">
+
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Intern</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="taskTable">
+                            <!-- JS dynamic rows -->
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../../js/admin/task.js"></script>
+</body>
+
+</html>

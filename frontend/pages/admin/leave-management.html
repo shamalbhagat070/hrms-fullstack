@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leave</title>
+<link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+<div class="container">
+
+<div class="sidebar">
+<h2>HRMS</h2>
+<a href="dashboard.html">Dashboard</a>
+<a href="employees.html">Employees</a>
+<a href="attendance.html">Attendance</a>
+<a class="active" href="leave.html">Leave</a>
+<a href="payroll.html">Payroll</a>
+</div>
+
+<div class="main">
+<h1>Leave Management</h1>
+
+<form id="leaveForm" onsubmit="addLeave(event)">
+<input id="leaveName" placeholder="Employee Name" required>
+<input id="reason" placeholder="Reason" required>
+<button>Apply Leave</button>
+</form>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Reason</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody id="leaveTable"></tbody>
+</table>
+
+</div>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

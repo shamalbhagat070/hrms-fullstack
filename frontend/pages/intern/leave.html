@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Apply Leave</title>
+    <link rel="stylesheet" href="../../css/intern.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h2>Intern Portal</h2>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="tasks.html">My Tasks</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li class="active"><a href="leave.html">Apply Leave</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="certificate.html">Certificate</a></li>
+            </ul>
+        </div>
+
+
+        <!-- MAIN -->
+        <div class="main">
+
+            <!-- TOPBAR -->
+            <div class="topbar">
+                <h2>Apply Leave</h2>
+
+                <div class="notification">
+                    🔔
+                    <span class="badge">!</span>
+                    <div id="notifList" class="notif-dropdown"></div>
+                </div>
+            </div>
+
+            <!-- ✅ UPDATED LEAVE BALANCE (PROFESSIONAL) -->
+            <div class="summary">
+
+                <div class="card-box">
+                    <h4>Casual Leave</h4>
+                    <p>Remaining: <span id="casualRemaining">0</span></p>
+                    <small>Used: <span id="casualUsed">0</span></small>
+                </div>
+
+                <div class="card-box">
+                    <h4>Sick Leave</h4>
+                    <p>Remaining: <span id="sickRemaining">0</span></p>
+                    <small>Used: <span id="sickUsed">0</span></small>
+                </div>
+
+                <div class="card-box">
+                    <h4>Paid Leave</h4>
+                    <p>Remaining: <span id="paidRemaining">0</span></p>
+                    <small>Used: <span id="paidUsed">0</span></small>
+                </div>
+
+            </div>
+
+            <!-- APPLY FORM -->
+            <div class="card leave-form">
+
+                <h3>Request Leave</h3>
+
+                <div class="form-grid">
+
+                    <div>
+                        <label>Leave Type</label>
+                        <select id="leaveType">
+                        <option value="CASUAL">Casual</option>
+                        <option value="SICK">Sick</option>
+                        <option value="PAID">Paid</option>
+                        <option value="UNPAID">Unpaid</option>
+                    </select>
+                    </div>
+
+                    <div>
+                        <label>From Date</label>
+                        <input type="date" id="fromDate">
+                    </div>
+
+                    <div>
+                        <label>To Date</label>
+                        <input type="date" id="toDate">
+                    </div>
+
+                    <div>
+                        <label>Day Type</label>
+                        <select id="dayType">
+                        <option value="FULL_DAY">Full Day</option>
+                        <option value="FIRST_HALF">First Half</option>
+                        <option value="SECOND_HALF">Second Half</option>
+                    </select>
+                    </div>
+
+                    <div class="full-width">
+                        <label>Reason</label>
+                        <textarea id="reason" rows="3"></textarea>
+                    </div>
+
+                </div>
+
+                <button class="btn primary" onclick="applyLeave()">Submit Request</button>
+
+            </div>
+
+            <!-- LEAVE HISTORY -->
+            <div class="card">
+                <h3>Leave History</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Days</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaveTable"></tbody>
+                </table>
+            </div>
+
+            <!-- CALENDAR -->
+            <div class="card">
+                <h3>Leave Calendar</h3>
+                <div id="leaveCalendar"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../../js/intern/leave.js"></script>
+
+</body>
+
+</html>

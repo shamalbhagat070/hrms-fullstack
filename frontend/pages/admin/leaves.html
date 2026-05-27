@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Leaves - HRMS</title>
+    <link rel="stylesheet" href="../../css/admin.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>HRMS Admin</h2>
+            <ul>
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li><a href="employees.html">👨‍💼 Employees</a></li>
+                <li><a href="attendance.html">📊 Attendance</a></li>
+                <li class="active"><a href="#">🌴 Leaves</a></li>
+                <li><a href="payroll.html">💰 Payroll</a></li>
+                <li><a href="tasks.html">📋 Tasks<a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- HEADER -->
+            <header class="header">
+                <div>
+                    <h1>Leave Requests</h1>
+                    <p class="sub-text">Manage employee leave applications</p>
+                </div>
+            </header>
+
+            <!-- ANALYTICS -->
+            <div class="cards">
+                <div class="card-box">Total: <span id="totalCount">0</span></div>
+                <div class="card-box approved">Approved: <span id="approvedCount">0</span></div>
+                <div class="card-box pending">Pending: <span id="pendingCount">0</span></div>
+                <div class="card-box rejected">Rejected: <span id="rejectedCount">0</span></div>
+            </div>
+
+            <!-- FILTERS -->
+            <section class="controls">
+                <input type="text" id="searchLeave" placeholder="🔍 Search employee..." onkeyup="searchLeave()">
+
+                <input type="date" id="fromDate" onchange="filterByDate()">
+                <input type="date" id="toDate" onchange="filterByDate()">
+
+                <select id="leaveFilter" onchange="filterLeave()">
+                <option value="">All Status</option>
+                <option value="PENDING">Pending</option>
+                <option value="APPROVED">Approved</option>
+                <option value="REJECTED">Rejected</option>
+            </select>
+            </section>
+
+            <!-- TABLE -->
+            <div class="card">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Employee</th>
+                            <th>Type</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Half Day</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaveTable"></tbody>
+                </table>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="../../js/admin/leaves.js"></script>
+
+</body>
+
+</html>

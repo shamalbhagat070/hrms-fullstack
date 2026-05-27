@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance - HRMS</title>
+    <link rel="stylesheet" href="../../css/admin.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>HRMS Admin</h2>
+            <ul>
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li><a href="employees.html">👨‍💼 Employees</a></li>
+                <li class="active"><a href="#">📊 Attendance</a></li>
+                <li><a href="leaves.html">🌴 Leaves</a></li>
+                <li><a href="payroll.html">💰 Payroll</a></li>
+                <li><a href="tasks.html">📋 Tasks</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- HEADER -->
+            <header class="header">
+                <h1>Attendance</h1>
+            </header>
+
+            <!-- SUMMARY -->
+            <section class="cards">
+                <div class="card">Present: <span id="presentCount">0</span></div>
+                <div class="card">Absent: <span id="absentCount">0</span></div>
+                <div class="card">Leave: <span id="leaveCount">0</span></div>
+            </section>
+
+            <!-- CONTROLS -->
+            <section class="controls">
+                <input type="date" id="attendanceDate" onchange="filterByDate()">
+                <input type="text" id="search" placeholder="Search employee..." onkeyup="searchAttendance()">
+                <button onclick="openMonthly()">📅 Monthly Report</button>
+            </section>
+
+            <!-- TABLE -->
+            <div class="card">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>In</th>
+                            <th>Out</th>
+                            <th>Mark</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendanceTable"></tbody>
+                </table>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="../../js/admin/attendance.js"></script>
+
+</body>
+
+</html>

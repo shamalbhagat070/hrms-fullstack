@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/admin.css">
+</head>
+
+<body class="admin dark">
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>HRMS Admin</h2>
+            <ul>
+                <li class="active"><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li><a href="employees.html">👨‍💼 Employees</a></li>
+                <li><a href="attendance.html">📊 Attendance</a></li>
+                <li><a href="leaves.html">🌴 Leaves</a></li>
+                <li><a href="payroll.html">💰 Payroll</a></li>
+                <li><a href="tasks.html">📋 Tasks</li><a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- HEADER -->
+            <header class="header">
+    <h1>Dashboard</h1>
+
+    <div class="header-actions">
+
+   <div class="user-info">
+          
+            <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </div>
+</header>
+
+            <!-- CARDS -->
+            <section class="cards">
+
+                <div class="card">
+                    <h3>Total Employees</h3>
+                    <p id="empCount">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Today's Attendance</h3>
+                    <p id="presentCount">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Pending Leaves</h3>
+                    <p id="leaveCount">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Monthly Payroll</h3>
+                    <p id="payrollTotal">₹0</p>
+                </div>
+
+            </section>
+
+            <!-- CHARTS -->
+            <section class="charts">
+
+                <!-- PAYROLL -->
+                <div class="card">
+                    <h3>📊 Payroll Analytics</h3>
+                    <div class="chart-box">
+                        <canvas id="payrollChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- EMPLOYEE GROWTH -->
+                <div class="card">
+                    <h3>📈 Employee Growth</h3>
+                    <div class="chart-box">
+                        <canvas id="empChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- ATTENDANCE -->
+                <div class="card">
+                    <h3>📊 Attendance Overview</h3>
+                    <div class="chart-box">
+                        <canvas id="attendanceChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- TREND -->
+                <div class="card">
+                    <h3>📈 Monthly Trend</h3>
+                    <div class="chart-box">
+                        <div style="height: 300px;">
+                            <canvas id="trendChart"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- ✅ Chart.js (LOAD ONLY ONCE) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- ✅ Dashboard JS -->
+    <script src="../../js/admin/dashboard.js"></script>
+
+
+</body>
+
+</html>

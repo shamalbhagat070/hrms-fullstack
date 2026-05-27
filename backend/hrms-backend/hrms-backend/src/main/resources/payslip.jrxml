@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD Report Design//EN"
+        "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+
+<jasperReport name="payslip" pageWidth="595" pageHeight="842"
+              columnWidth="555" leftMargin="20" rightMargin="20"
+              topMargin="20" bottomMargin="20">
+
+    <!-- ================= FIELDS ================= -->
+    <field name="user" class="com.hrms.models.User"/>
+    <field name="basic" class="java.lang.Double"/>
+    <field name="allowances" class="java.lang.Double"/>
+    <field name="pf" class="java.lang.Double"/>
+    <field name="tax" class="java.lang.Double"/>
+    <field name="leaveDeduction" class="java.lang.Double"/>
+    <field name="netSalary" class="java.lang.Double"/>
+    <field name="month" class="java.lang.Integer"/>
+    <field name="year" class="java.lang.Integer"/>
+
+    <!-- ================= TITLE ================= -->
+    <title>
+        <band height="100">
+
+            <!-- Company Name -->
+            <staticText>
+                <reportElement x="0" y="0" width="555" height="30"/>
+                <textElement textAlignment="Center">
+                    <font size="20" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Your Company Pvt Ltd]]></text>
+            </staticText>
+
+            <!-- Address -->
+            <staticText>
+                <reportElement x="0" y="30" width="555" height="20"/>
+                <textElement textAlignment="Center"/>
+                <text><![CDATA[Pune, Maharashtra, India]]></text>
+            </staticText>
+
+            <!-- Month -->
+            <textField>
+                <reportElement x="0" y="60" width="555" height="20"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[
+                    "Salary Slip - " +
+                    new java.text.DateFormatSymbols().getMonths()[$F{month}-1]
+                    + " " + $F{year}
+                ]]></textFieldExpression>
+            </textField>
+
+        </band>
+    </title>
+
+    <!-- ================= DETAIL ================= -->
+    <detail>
+        <band height="650">
+
+            <!-- ===== EMPLOYEE BOX ===== -->
+            <rectangle>
+                <reportElement x="0" y="0" width="555" height="130" backcolor="#F4F6F7" mode="Opaque"/>
+            </rectangle>
+
+            <!-- LEFT -->
+            <textField>
+                <reportElement x="10" y="10" width="260" height="20"/>
+                <textFieldExpression><![CDATA[
+                    "Employee ID : " + $F{user}.getId()
+                ]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="10" y="30" width="260" height="20"/>
+                <textFieldExpression><![CDATA[
+                    "Name : " + $F{user}.getFirstName() + " " + $F{user}.getLastName()
+                ]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="10" y="50" width="260" height="20"/>
+                <textFieldExpression><![CDATA[
+                    "Designation : " +
+                    ($F{user}.getDesignation() != null ? $F{user}.getDesignation() : "-")
+                ]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="10" y="70" width="260" height="20"/>
+                <textFieldExpression><![CDATA[
+                    "Department : " +
+                    ($F{user}.getDepartment() != null ? $F{user}.getDepartment() : "-")
+                ]]></textFieldExpression>
+            </textField>
+
+            <!-- RIGHT -->
+            <textField>
+                <reportElement x="300" y="10" width="250" height="20"/>
+                <textFieldExpression><![CDATA[
+                    "Bank : " +
+                    ($F{user}.getBankName() != null ? $F{user}.getBankName() : "-")
+                ]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="300" y="30" width="250" height="20"/>
+                <textFieldExpression><![CDATA[
+                    "Account No : " +
+                    ($F{user}.getAccountNumber() != null ? $F{user}.getAccountNumber() : "-")
+                ]]></textFieldExpression>
+            </textField>
+
+            <!-- ===== SALARY TABLE ===== -->
+            <rectangle>
+                <reportElement x="0" y="150" width="555" height="220" backcolor="#FFFFFF" mode="Opaque"/>
+            </rectangle>
+
+            <!-- HEADERS -->
+            <staticText>
+                <reportElement x="0" y="150" width="275" height="25" backcolor="#D5DBDB" mode="Opaque"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[EARNINGS]]></text>
+            </staticText>
+
+            <staticText>
+                <reportElement x="275" y="150" width="280" height="25" backcolor="#D5DBDB" mode="Opaque"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[DEDUCTIONS]]></text>
+            </staticText>
+
+            <!-- Earnings -->
+            <textField>
+                <reportElement x="10" y="180" width="250" height="20"/>
+                <textFieldExpression><![CDATA[
+                    "Basic : ₹ " +
+                    new java.text.DecimalFormat("#,##0.00")
+                    .format($F{basic} != null ? $F{basic} : 0)
+                ]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="10" y="210" width="250" height="20"/>
+                <textFieldExpression><![CDATA[
+                    "Allowance : ₹ " +
+                    new java.text.DecimalFormat("#,##0.00")
+                    .format($F{allowances} != null ? $F{allowances} : 0)
+                ]]></textFieldExpression>
+            </textField>
+
+            <!-- Deductions -->
+            <textField>
+                <reportElement x="300" y="180" width="250" height="20"/>
+                <textFieldExpression><![CDATA[
+                    "PF : ₹ " +
+                    new java.text.DecimalFormat("#,##0.00")
+                    .format($F{pf} != null ? $F{pf} : 0)
+                ]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="300" y="210" width="250" height="20"/>
+                <textFieldExpression><![CDATA[
+                    "Tax : ₹ " +
+                    new java.text.DecimalFormat("#,##0.00")
+                    .format($F{tax} != null ? $F{tax} : 0)
+                ]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="300" y="240" width="250" height="20"/>
+                <textFieldExpression><![CDATA[
+                    "Leave Deduction : ₹ " +
+                    new java.text.DecimalFormat("#,##0.00")
+                    .format($F{leaveDeduction} != null ? $F{leaveDeduction} : 0)
+                ]]></textFieldExpression>
+            </textField>
+
+            <!-- TOTAL -->
+            <line>
+                <reportElement x="0" y="380" width="555" height="1"/>
+            </line>
+
+            <textField>
+                <reportElement x="10" y="390" width="250" height="20"/>
+                <textFieldExpression><![CDATA[
+                    "Total Earnings : ₹ " +
+                    new java.text.DecimalFormat("#,##0.00")
+                    .format(
+                        ($F{basic} != null ? $F{basic} : 0) +
+                        ($F{allowances} != null ? $F{allowances} : 0)
+                    )
+                ]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="300" y="390" width="250" height="20"/>
+                <textFieldExpression><![CDATA[
+                    "Total Deductions : ₹ " +
+                    new java.text.DecimalFormat("#,##0.00")
+                    .format(
+                        ($F{pf} != null ? $F{pf} : 0) +
+                        ($F{tax} != null ? $F{tax} : 0) +
+                        ($F{leaveDeduction} != null ? $F{leaveDeduction} : 0)
+                    )
+                ]]></textFieldExpression>
+            </textField>
+
+            <!-- NET SALARY -->
+            <rectangle>
+                <reportElement x="0" y="430" width="555" height="70" backcolor="#D4EFDF" mode="Opaque"/>
+            </rectangle>
+
+            <textField>
+                <reportElement x="0" y="445" width="555" height="40"/>
+                <textElement textAlignment="Center">
+                    <font size="18" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[
+                    "Net Salary : ₹ " +
+                    new java.text.DecimalFormat("#,##0.00")
+                    .format($F{netSalary} != null ? $F{netSalary} : 0)
+                ]]></textFieldExpression>
+            </textField>
+
+        </band>
+    </detail>
+
+</jasperReport>

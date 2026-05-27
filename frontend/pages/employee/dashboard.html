@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="../../css/employee1.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h2>Employee</h2>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="profile.html">My Profile</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="leave.html">Apply Leave</a></li>
+                <li><a href="payslip.html">Payslip</a></li>
+                <li>
+                    <button onclick="logout()" class="logout-btn">Logout</button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main">
+
+            <!-- TOPBAR -->
+            <div class="topbar">
+                <h2>Welcome, <span id="employeeName">Employee</span></h2>
+                <div class="topbar-right">
+                    <button class="btn checkin-btn">✔ Check In</button>
+                    <button class="btn checkout-btn">✖ Check Out</button>
+                </div>
+            </div>
+
+            <!-- CARDS -->
+            <div class="cards">
+                <div class="card blue">
+                    <h4>Today Status</h4>
+                    <p id="todayStatus">--</p>
+                </div>
+
+                <div class="card purple">
+                    <h4>Leaves Taken</h4>
+                    <p id="leavesTaken">0</p>
+                </div>
+
+                <div class="card orange">
+                    <h4>Remaining Leaves</h4>
+                    <p id="remainingLeaves">0</p>
+                </div>
+
+                <div class="card green">
+                    <h4>Salary Status</h4>
+                    <p id="salaryStatus">--</p>
+                </div>
+            </div>
+
+            <!-- CHART + SUMMARY -->
+            <div class="charts">
+                <div class="chart-box">
+                    <h3>Attendance Overview</h3>
+                    <canvas id="chart"></canvas>
+                </div>
+
+                <div class="chart-box">
+                    <h3>Quick Summary</h3>
+                    <p>✔ Present Days: <span id="presentDays">0</span></p>
+                    <p>✖ Absent Days: <span id="absentDays">0</span></p>
+                </div>
+            </div>
+
+            <!-- TABLES -->
+            <div class="tables">
+                <div class="table-box">
+                    <h3>Recent Attendance</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="attendanceTable"></tbody>
+                    </table>
+                </div>
+
+                <div class="table-box">
+                    <h3>Leave History</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaveTable"></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../js/employee/dashboard.js"></script>
+
+</body>
+
+</html>

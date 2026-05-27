@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+    <link rel="stylesheet" href="../../css/employee1.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h2>Intern Portal</h2>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="tasks.html">My Tasks</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="leave.html">Apply Leave</a></li>
+                <li><a href="profile.html" class="active">My Profile</a></li>
+                <li><a href="certificate.html">Certificate</a></li>
+            </ul>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main">
+
+            <!-- TOPBAR -->
+            <div class="topbar">
+                <h2>My Profile</h2>
+                <div class="topbar-right">
+                    <div class="profile">
+                        <img id="topImg" src="https://i.pravatar.cc/40">
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROFILE -->
+            <div class="profile-container">
+
+                <!-- LEFT CARD -->
+                <div class="profile-card">
+                    <div class="profile-img-box">
+                        <img id="profileImg" src="https://i.pravatar.cc/120">
+
+                        <input type="file" id="imgInput" accept="image/*" hidden>
+
+                        <div class="img-actions">
+                            <!-- ✅ FIXED -->
+                            <button type="button" onclick="document.getElementById('imgInput').click()">Upload</button>
+                            <button type="button" onclick="removeImage()">Remove</button>
+                        </div>
+                    </div>
+
+                    <!-- PREVIEW MODAL -->
+                    <div id="imageModal" class="image-modal">
+                        <div class="modal-content">
+                            <h3>Adjust Profile Picture</h3>
+
+                            <div class="crop-container">
+                                <img id="cropImage">
+                            </div>
+
+                            <div class="modal-actions">
+                                <button type="button" onclick="cropImage()">Crop</button>
+                                <button type="button" onclick="saveCroppedImage()">Save</button>
+                                <button type="button" onclick="closeModal()">Cancel</button>
+                            </div>
+
+                            <div class="preview-box">
+                                <p>Preview:</p>
+                                <img id="previewImg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 id="displayName"></h3>
+                    <p class="role" id="roleText"></p>
+
+                    <button type="button" class="btn edit-btn" onclick="enableEdit()">✏ Edit Profile</button>
+                </div>
+
+                <!-- RIGHT PANEL -->
+                <div class="profile-details">
+
+                    <!-- STEP NAV -->
+                    <div class="step-nav">
+                        <span class="active">Basic</span>
+                        <span>Job</span>
+                        <span>Address</span>
+                        <span>Bank</span>
+                    </div>
+
+                    <!-- STEP 1 -->
+                    <div class="form-step active" id="step1">
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" id="fullName" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="email" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="text" id="phone" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Date of Birth</label>
+                                <input type="date" id="dob" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Gender</label>
+                                <select id="gender" disabled>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn primary-btn" onclick="nextStep(2)">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2 -->
+                    <div class="form-step" id="step2">
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label>Employee ID</label>
+                                <input type="text" id="empId" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Department</label>
+                                <input type="text" id="department" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Designation</label>
+                                <input type="text" id="designation" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Joining Date</label>
+                                <input type="date" id="joiningDate" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Employment Type</label>
+                                <select id="employmentType" disabled>
+                                    <option value="Full Time">Full Time</option>
+                                    <option value="Intern">Intern</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn secondary-btn" onclick="prevStep(1)">Back</button>
+                            <button type="button" class="btn primary-btn" onclick="nextStep(3)">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3 -->
+                    <div class="form-step" id="step3">
+                        <div class="form-grid">
+
+                            <div class="form-group full">
+                                <label>Address</label>
+                                <input type="text" id="address" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>City</label>
+                                <input type="text" id="city" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>State</label>
+                                <input type="text" id="state" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Country</label>
+                                <input type="text" id="country" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Pincode</label>
+                                <input type="text" id="pincode" disabled>
+                            </div>
+
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn secondary-btn" onclick="prevStep(2)">Back</button>
+                            <button type="button" class="btn primary-btn" onclick="nextStep(4)">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 4 -->
+                    <div class="form-step" id="step4">
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label>Bank Name</label>
+                                <input type="text" id="bankName" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Account Number</label>
+                                <input type="text" id="accountNumber" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>IFSC Code</label>
+                                <input type="text" id="ifsc" disabled>
+                            </div>
+
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn secondary-btn" onclick="prevStep(3)">Back</button>
+                            <button type="button" class="btn primary-btn" onclick="updateProfile()">Save Profile</button>
+                        </div>
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div class="password-box">
+                        <h4>Change Password</h4>
+
+                        <div class="form-group">
+                            <label>Current Password</label>
+                            <input type="password" id="currentPass">
+                        </div>
+
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <input type="password" id="newPass">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" id="confirmPass">
+                        </div>
+
+                        <button type="button" class="btn danger-btn" onclick="updatePassword()">Update Password</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../../js/employee/profile.js"></script>
+
+</body>
+
+</html>

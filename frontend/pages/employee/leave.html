@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Apply Leave</title>
+    <link rel="stylesheet" href="../../css/employee1.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h2>Employee</h2>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="profile.html">My Profile</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li class="active"><a href="leave.html">Apply Leave</a></li>
+                <li><a href="payslip.html">Payslip</a></li>
+                <li>
+                    <button onclick="logout()" class="logout-btn">Logout</button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main">
+
+            <div class="topbar">
+                <h2>Apply Leave</h2>
+            </div>
+
+            <!-- LEAVE BALANCE -->
+            <div class="summary">
+
+                <div class="card-box">
+                    <h4>Casual Leave (Paid)</h4>
+                    <p>Remaining: <span id="casualRemaining">0</span></p>
+                    <small>Used: <span id="casualUsed">0</span></small>
+                </div>
+
+                <div class="card-box">
+                    <h4>Sick Leave (Paid)</h4>
+                    <p>Remaining: <span id="sickRemaining">0</span></p>
+                    <small>Used: <span id="sickUsed">0</span></small>
+                </div>
+
+                <div class="card-box">
+                    <h4>Paid Leave</h4>
+                    <p>Remaining: <span id="paidRemaining">0</span></p>
+                    <small>Used: <span id="paidUsed">0</span></small>
+                </div>
+
+                <div class="card-box">
+                    <h4>Unpaid Leave (Deduction)</h4>
+                    <p>Remaining: <span id="unpaidRemaining">Unlimited</span></p>
+                    <small>Used: <span id="unpaidUsed">0</span></small>
+                </div>
+
+            </div>
+
+            <!-- FORM -->
+            <div class="card leave-form">
+
+                <h3>Request Leave</h3>
+
+                <div class="form-grid">
+
+                    <div>
+                        <label>Leave Type</label>
+                        <select id="leaveType">
+                        <option value="CASUAL">Casual</option>
+                        <option value="SICK">Sick</option>
+                        <option value="PAID">Paid</option>
+                        <option value="UNPAID">Unpaid</option>
+                    </select>
+                    </div>
+
+                    <div>
+                        <label>From Date</label>
+                        <input type="date" id="fromDate">
+                    </div>
+
+                    <div>
+                        <label>To Date</label>
+                        <input type="date" id="toDate">
+                    </div>
+
+                    <div>
+                        <label>Day Type</label>
+                        <select id="dayType">
+                        <option value="FULL_DAY">Full Day</option>
+                        <option value="FIRST_HALF">First Half</option>
+                        <option value="SECOND_HALF">Second Half</option>
+                    </select>
+                    </div>
+
+                    <div class="full-width">
+                        <label>Reason</label>
+                        <textarea id="reason" rows="3"></textarea>
+                    </div>
+
+                    <!-- ✅ TOTAL DAYS -->
+                    <div class="full-width">
+                        <p>Total Days: <strong><span id="totalDays">0</span></strong></p>
+                    </div>
+
+                </div>
+
+                <button class="btn primary" onclick="applyLeave()">Submit Request</button>
+
+            </div>
+
+            <!-- HISTORY -->
+            <div class="card">
+                <h3>Leave History</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Days</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaveTable"></tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../js/employee/leave.js"></script>
+
+</body>
+
+</html>

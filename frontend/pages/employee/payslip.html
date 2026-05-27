@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Payslip</title>
+    <link rel="stylesheet" href="../../css/employee1.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h2>Employee</h2>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="profile.html">My Profile</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="leave.html">Apply Leave</a></li>
+                <li class="active"><a href="payslip.html">Payslip</a></li>
+                <li>
+                    <button onclick="logout()" class="logout-btn">Logout</button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main">
+
+            <!-- TOPBAR -->
+            <div class="topbar">
+                <h2>Payslip</h2>
+
+                <!-- ✅ Dynamic month select ready -->
+                <select id="monthSelect" class="month-select">
+                <option value="2026-04">April 2026</option>
+                <option value="2026-03">March 2026</option>
+                <option value="2026-02">February 2026</option>
+            </select>
+            </div>
+
+            <!-- ✅ SUMMARY CARDS -->
+            <div class="summary">
+                <div class="card-box">
+                    Gross Salary <br>
+                    <strong id="gross">₹0</strong>
+                </div>
+
+                <div class="card-box">
+                    Total Deductions <br>
+                    <strong id="deduction">₹0</strong>
+                </div>
+
+                <div class="card-box">
+                    Net Salary <br>
+                    <strong id="net">₹0</strong>
+                </div>
+            </div>
+
+            <!-- PAYSLIP DETAILS -->
+            <div class="card payslip">
+
+                <h3>Salary Breakdown</h3>
+
+                <div class="payslip-grid">
+
+                    <!-- Earnings -->
+                    <div>
+                        <h4>Earnings</h4>
+                        <table>
+                            <tr>
+                                <td>Basic Salary</td>
+                                <td id="basic">₹0</td>
+                            </tr>
+                            <tr>
+                                <td>Allowances (HRA)</td>
+                                <td id="hra">₹0</td>
+                            </tr>
+                            <tr>
+                                <td>Bonus</td>
+                                <td id="bonus">₹0</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Deductions -->
+                    <div>
+                        <h4>Deductions</h4>
+                        <table>
+                            <tr>
+                                <td>PF</td>
+                                <td id="pf">₹0</td>
+                            </tr>
+                            <tr>
+                                <td>Tax</td>
+                                <td id="tax">₹0</td>
+                            </tr>
+                            <tr>
+                                <td>Leave Deduction</td>
+                                <td id="leaveDeduction">₹0</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+                <!-- Net Salary -->
+                <div class="net-salary">
+                    Net Pay: <span id="netPay">₹0</span>
+                </div>
+
+                <!-- ✅ FIXED DOWNLOAD BUTTON -->
+                <button class="btn primary" onclick="downloadPayslip()">
+                ⬇ Download Payslip
+            </button>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../../js/employee/payslip.js"></script>
+
+</body>
+
+</html>

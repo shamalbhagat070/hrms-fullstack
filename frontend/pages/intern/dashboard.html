@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intern Dashboard | HRMS</title>
+    <link rel="stylesheet" href="../../css/intern.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h2>Intern Portal</h2>
+            <ul>
+                <li class="active"><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="tasks.html">My Tasks</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="leave.html">Leave</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="certificate.html">Certificate</a></li>
+            </ul>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main">
+
+            <!-- HEADER -->
+            <div class="topbar">
+                <div>
+                    <h2>Dashboard</h2>
+                    <p class="subtitle">Welcome back, Intern 👋</p>
+                </div>
+
+                <div class="top-actions">
+                    <span class="user">👤 Intern</span>
+                    <button onclick="logout()" class="logout-btn">Logout</button>
+                </div>
+            </div>
+
+            <!-- DASHBOARD SECTION -->
+            <div class="section">
+
+                <h3 class="section-title">Overview</h3>
+
+                <div class="cards">
+
+                    <div class="card">
+                        <h4>Assigned Tasks</h4>
+                        <p id="assigned">0</p>
+                    </div>
+
+                    <div class="card">
+                        <h4>Completed</h4>
+                        <p id="completed">0</p>
+                    </div>
+
+                    <div class="card">
+                        <h4>Pending</h4>
+                        <p id="pending">0</p>
+                    </div>
+
+                    <div class="card highlight">
+                        <h4>Progress</h4>
+                        <p id="progress">0%</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../../js/intern/dashboard.js"></script>
+</body>
+
+</html>
