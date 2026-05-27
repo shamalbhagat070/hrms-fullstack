@@ -51,3 +51,17 @@ hrms-fullstack/
 ```bash
 npm install
 npm start
+
+
+📸 Screenshots (Add Soon)
+Postman API responses
+UI Screens
+Database Schema
+📌 Future Improvements
+Docker Deployment
+Microservices Architecture
+Cloud Deployment (AWS)
+👩‍💻 Author
+
+Shamal Bhagat
+Java Backend Developer | Spring Boot | REST APIs
